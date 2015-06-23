@@ -1,0 +1,14 @@
+Backdoors:
+1. pyx on 6660
+Python xinetd listener that takes input in the form: <password>:::<command>
+The password is OneBigRoomFullofBadBitches.
+
+2. python cgi script at /cgi/.gh. Accessible on 8080 or 8443 (https).
+Starts an authenticated shell spawner.
+Use the following parameters when making the GET request over HTTP:
+cb - Call back to remote. Input your IP address where the receiving netcat is listening.
+r - Port to connect to if cb is provided. If not, it starts listening on the compromised machine on this port.
+When connecting to the listener, the shell spawner will issue a challenge. The correct password is "Claire Standish".
+
+3. suid binary at /usr/lib/yum-plugins/sys
+Login through public, then escalate to root.
